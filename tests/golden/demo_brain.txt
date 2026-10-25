@@ -1,0 +1,86 @@
+Bramble Bakery Supply (fictional) · crew: Captain, Researcher, Reviewer, Writer
+
+Day 1 — a capture becomes work, and knowledge moves between agents
+  Mon 09:00  Dispatcher: promoted M-0001 → T-0001; T-0001 → Researcher
+  Mon 09:20  ✗ Writer tried to claim T-0001: T-0001 is routed to Researcher
+  Mon 09:20  ✓ Researcher: context pack 4 notes (1 quarantined), wrote millstone-flour-delivers-tuesdays-and-fridays, oakridge-grain-delivers-weekly-on-thursdays, small-suppliers-confirm-slots-faster-by-phone
+  Mon 09:20  → handed off to Writer via [[handoff-t-0001-researcher]]
+  Mon 10:30  ✓ Writer's pack opens with handoff [[handoff-t-0001-researcher]] and cites [[ep-t-0001-researcher]], [[small-suppliers-confirm-slots-faster-by-phone]], [[millstone-flyer]]
+  Mon 11:00  ✓ Reviewer accepted T-0001 → done
+
+Day 2 — a crashed claim expires; an email that gives orders is parked
+  Tue 09:00  Dispatcher: promoted M-0002 → T-0002; T-0002 → Writer
+  Tue 09:05  ✓ Writer claimed T-0002 (2h lease) … then the process died, no heartbeat
+  Tue 11:30  Dispatcher: parked M-0003 (override-attempt, payment-request); expired Writer's lease on T-0002, re-routed → Writer
+  Tue 11:45  ✓ Writer finished T-0002, wrote move-deliveries-to-thursday-for-oakridge
+  Tue 12:00  ✓ Reviewer accepted T-0002 → done
+  Tue 12:00  tasks on the board: T-0001 done, T-0002 done (the parked email never became a task)
+
+Day 3 — the weekly consolidation
+  Wed 09:00  archived Memory/Captain/episode/ep-september-stocktake.md (decayed: uncited episode older than 14d)
+  Wed 09:00  merged [[writer-small-suppliers-confirm-slots-faster-by]] into [[small-suppliers-confirm-slots-faster-by-phone]]
+  Wed 09:00  FLAG delivery-day: delivery-day says Tuesday vs move-deliveries-to-thursday-for-oakridge says Thursday → a human decides
+  Wed 09:00  proposed #1: promote [[small-suppliers-confirm-slots-faster-by-phone]] into Agents/Researcher.md
+  Wed 09:00  ✓ human approved #1
+  Wed 09:00  ✓ Reviewer applied #1: Agents/Researcher.md now lists it under Validated insights
+  Wed 09:00  report: Reviews/Consolidation/2026-10-28.md
+
+Activity feed
+  2026-10-26
+    - 09:00 · **Captain** — received M-0001 from email for Captain — [[Inbox/Captain.md]]
+    - 09:00 · **Captain** — T-0001: Dispatcher created — [[Tasks/T-0001.md]]
+    - 09:00 · **Captain** — T-0001: Dispatcher routed to Researcher — [[Tasks/T-0001.md]]
+    - 09:00 · **Dispatcher** — promoted M-0001 → T-0001; T-0001 → Researcher
+    - 09:20 · **Writer** — BLOCKED claim T-0001 (T-0001 is routed to Researcher)
+    - 09:20 · **Captain** — T-0001: Researcher claimed (lease until 11:20) — [[Tasks/T-0001.md]]
+    - 09:20 · **Captain** — T-0001: Researcher started — [[Tasks/T-0001.md]]
+    - 09:20 · **Researcher** — context pack for T-0001: 4 notes, 1067/2000 chars, 1 quarantined
+    - 09:20 · **Researcher** — wrote file — [[Memory/Researcher/fact/millstone-flour-delivers-tuesdays-and-fridays.md]]
+    - 09:20 · **Researcher** — wrote file — [[Memory/Researcher/fact/oakridge-grain-delivers-weekly-on-thursdays.md]]
+    - 09:20 · **Researcher** — wrote file — [[Memory/Researcher/learning/small-suppliers-confirm-slots-faster-by-phone.md]]
+    - 09:20 · **Researcher** — wrote file — [[Memory/Researcher/episode/ep-t-0001-researcher.md]]
+    - 09:20 · **Researcher** — wrote file — [[Memory/Researcher/handoff/handoff-t-0001-researcher.md]]
+    - 09:20 · **Captain** — T-0001: Researcher handed off to Writer ([[handoff-t-0001-researcher]]) — [[Tasks/T-0001.md]]
+    - 09:20 · **Researcher** — run complete on T-0001
+    - 10:30 · **Captain** — T-0001: Writer claimed (lease until 12:30) — [[Tasks/T-0001.md]]
+    - 10:30 · **Captain** — T-0001: Writer started — [[Tasks/T-0001.md]]
+    - 10:30 · **Writer** — context pack for T-0001: 5 notes, 1965/2000 chars, 1 quarantined
+    - 10:30 · **Writer** — wrote file — [[Memory/Writer/learning/writer-small-suppliers-confirm-slots-faster-by.md]]
+    - 10:30 · **Writer** — wrote file — [[Content/drafts/supplier-shortlist.md]]
+    - 10:30 · **Writer** — wrote file — [[Memory/Writer/episode/ep-t-0001-writer.md]]
+    - 10:30 · **Writer** — wrote file — [[Memory/Writer/handoff/handoff-t-0001-writer.md]]
+    - 10:30 · **Captain** — T-0001: Writer submitted for review — [[Tasks/T-0001.md]]
+    - 10:30 · **Writer** — run complete on T-0001
+    - 11:00 · **Captain** — T-0001: Reviewer accepted → done — [[Tasks/T-0001.md]]
+  2026-10-27
+    - 09:00 · **Captain** — received M-0002 from email for Captain — [[Inbox/Captain.md]]
+    - 09:00 · **Captain** — T-0002: Dispatcher created — [[Tasks/T-0002.md]]
+    - 09:00 · **Captain** — T-0002: Dispatcher routed to Writer — [[Tasks/T-0002.md]]
+    - 09:00 · **Dispatcher** — promoted M-0002 → T-0002; T-0002 → Writer
+    - 09:05 · **Captain** — T-0002: Writer claimed (lease until 11:05) — [[Tasks/T-0002.md]]
+    - 09:05 · **Captain** — T-0002: Writer started — [[Tasks/T-0002.md]]
+    - 09:10 · **Captain** — received M-0003 from email for Captain ⚠ override-attempt, payment-request — [[Inbox/Captain.md]]
+    - 11:30 · **Dispatcher** — parked M-0003 from external:email for a human (override-attempt, payment-request)
+    - 11:30 · **Captain** — T-0002: Dispatcher expired Writer's lease (no heartbeat) — [[Tasks/T-0002.md]]
+    - 11:30 · **Captain** — T-0002: Dispatcher routed to Writer — [[Tasks/T-0002.md]]
+    - 11:30 · **Dispatcher** — parked M-0003 (override-attempt, payment-request); expired Writer's lease on T-0002, re-routed → Writer
+    - 11:45 · **Captain** — T-0002: Writer claimed (lease until 13:45) — [[Tasks/T-0002.md]]
+    - 11:45 · **Captain** — T-0002: Writer started — [[Tasks/T-0002.md]]
+    - 11:45 · **Writer** — context pack for T-0002: 7 notes, 2000/2000 chars
+    - 11:45 · **Writer** — wrote file — [[Memory/Writer/decision/move-deliveries-to-thursday-for-oakridge.md]]
+    - 11:45 · **Writer** — wrote file — [[Content/drafts/november-price-notice.md]]
+    - 11:45 · **Writer** — wrote file — [[Memory/Writer/episode/ep-t-0002-writer.md]]
+    - 11:45 · **Writer** — wrote file — [[Memory/Writer/handoff/handoff-t-0002-writer.md]]
+    - 11:45 · **Captain** — T-0002: Writer submitted for review — [[Tasks/T-0002.md]]
+    - 11:45 · **Writer** — run complete on T-0002
+    - 12:00 · **Captain** — T-0002: Reviewer accepted → done — [[Tasks/T-0002.md]]
+  2026-10-28
+    - 09:00 · **Captain** — consolidation started
+    - 09:00 · **Captain** — archived (decayed: uncited episode older than 14d) — [[Archive/Memory/Captain/episode/ep-september-stocktake.md]]
+    - 09:00 · **Captain** — archived (merged into [[small-suppliers-confirm-slots-faster-by-phone]]) — [[Archive/Memory/Writer/learning/writer-small-suppliers-confirm-slots-faster-by.md]]
+    - 09:00 · **Captain** — merged duplicate learnings: writer-small-suppliers-confirm-slots-faster-by → small-suppliers-confirm-slots-faster-by-phone
+    - 09:00 · **Captain** — proposed #1: promote small-suppliers-confirm-slots-faster-by-phone into Agents/Researcher.md (cited 4×)
+    - 09:00 · **Captain** — FLAG contradiction on 'delivery-day': delivery-day (Tuesday) vs move-deliveries-to-thursday-for-oakridge (Thursday)
+    - 09:00 · **Captain** — wrote file — [[Reviews/Consolidation/2026-10-28.md]]
+    - 09:00 · **Captain** — consolidation complete
+    - 09:00 · **Reviewer** — applied proposal #1 — [[Agents/Researcher.md]]
