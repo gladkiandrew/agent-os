@@ -1,7 +1,7 @@
 [project]
 name = "agent-os"
-version = "0.1.0"
-description = "A fail-closed governance layer for a crew of AI agents: charters, write scopes, approval gates, budgets and an activity feed."
+version = "0.2.0"
+description = "A second brain for an AI-native operation: compounding markdown memory and multi-agent coordination on a fail-closed governance layer. Standard library only."
 requires-python = ">=3.10"
 authors = [{ name = "Andrew Gladki" }]
 license = { text = "MIT" }
