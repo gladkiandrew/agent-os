@@ -8,7 +8,7 @@ from __future__ import annotations
 import os
 from dataclasses import dataclass, field
 
-LIST_KEYS = {"write_scope", "allowed_actions"}
+LIST_KEYS = {"write_scope", "allowed_actions", "capabilities", "archive_scope"}
 
 
 @dataclass(frozen=True)
@@ -20,6 +20,8 @@ class Charter:
     allowed_actions: tuple = ()        # e.g. ("write", "draft", "outbound")
     monthly_budget_usd: float = 0.0
     body: str = field(default="", repr=False)
+    capabilities: tuple = ()           # what the dispatcher may route to this agent
+    archive_scope: tuple = ()          # globs this agent may MOVE to Archive/ (never write)
 
     @property
     def runnable(self) -> bool:
@@ -77,6 +79,8 @@ def charter_from_text(text: str) -> Charter:
         allowed_actions=tuple(meta.get("allowed_actions", [])),
         monthly_budget_usd=float(meta.get("monthly_budget_usd", 0) or 0),
         body=body,
+        capabilities=tuple(meta.get("capabilities", [])),
+        archive_scope=tuple(meta.get("archive_scope", [])),
     )
 
 

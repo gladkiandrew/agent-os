@@ -55,3 +55,20 @@ class WriteScopeGuard:
             if glob_match(rel, pattern):
                 return rel
         raise ScopeViolation(f"{agent} may not write {rel!r} (scope: {list(charter.write_scope)})")
+
+    def check_archive(self, agent: str, path: str) -> str:
+        """Moving a note to Archive/ is its own permission, narrower than writing.
+
+        A consolidating agent needs to retire other agents' stale episodes without
+        being able to rewrite them, so `archive_scope` grants the move and nothing else.
+        """
+        charter = self.charters.get(agent)
+        if charter is None or not charter.runnable:
+            raise ScopeViolation(f"{agent} has no active charter — no archiving")
+        rel = self.normalize(path)
+        if rel.startswith("Archive/"):
+            raise ScopeViolation(f"{rel!r} is already archived")
+        for pattern in charter.archive_scope:
+            if glob_match(rel, pattern):
+                return rel
+        raise ScopeViolation(f"{agent} may not archive {rel!r} (archive scope: {list(charter.archive_scope)})")
