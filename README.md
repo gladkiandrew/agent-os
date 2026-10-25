@@ -84,3 +84,4 @@ across Claude Code, Hermes, MCP tool integrations, Telegram and a Linux VPS.
 ## Related
 
 - [`armm`](https://github.com/gladkiandrew/armm): my risk-first crypto futures execution engine, same philosophy: deterministic guards, demo lock by construction, everything logged.
+- [`amagna-intelligence`](https://github.com/gladkiandrew/amagna-intelligence): the companion TypeScript reference architecture: markdown memory, chartered agents, a Telegram cockpit on Cloudflare, and a PE deal-screener example.
