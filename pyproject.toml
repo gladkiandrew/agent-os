@@ -4,3 +4,4 @@ version = "0.1.0"
 description = "A fail-closed governance layer for a crew of AI agents: charters, write scopes, approval gates, budgets and an activity feed."
 requires-python = ">=3.10"
 authors = [{ name = "Andrew Gladki" }]
+license = { text = "MIT" }
