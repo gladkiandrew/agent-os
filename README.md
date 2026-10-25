@@ -16,7 +16,7 @@ writes anywhere without passing the same guard, gate and audit feed.
 ```bash
 git clone https://github.com/gladkiandrew/agent-os && cd agent-os
 python -m agent_os.demo_brain                # 3 simulated days, 4 agents: no keys, no network, ~0.1s
-python -m unittest discover -s tests         # 75 tests
+python -m unittest discover -s tests         # 80 tests
 ```
 
 ## Architecture
@@ -152,12 +152,28 @@ agent_os/
   brain.py    loop.py    model.py                                                wiring · one run · model seam
   demo.py     demo_brain.py
 examples/brain/   the fictional crew and seed vault
-tests/            75 tests + golden demo output
+tests/            80 tests + golden demo output
 ```
 
 Python 3.10+, standard library only. Runs keyless against a deterministic mock model.
-`AnthropicModel` is an optional adapter (`pip install anthropic`, `ANTHROPIC_API_KEY`)
-that's never needed by the tests or the demos.
+
+## Bring your own model
+
+No vendor is assumed. Set `LLM_PROVIDER` (and `LLM_MODEL` where the provider needs it)
+and `model_from_env()` returns the matching adapter. Nothing else changes: a real
+model's words become inferred notes behind the same guard, never permissions.
+
+| `LLM_PROVIDER` | What it runs | Credential |
+|---|---|---|
+| `openai` · `xai` · `openrouter` | GPT, Grok, or anything on OpenRouter | `OPENAI_API_KEY` · `XAI_API_KEY` · `OPENROUTER_API_KEY` |
+| `ollama` | a local open-weight model | none |
+| `openai-compatible` | any `/chat/completions` server (vLLM, LM Studio, …) via `LLM_BASE_URL` | `LLM_API_KEY` if it needs one |
+| `command` | any CLI that reads a prompt on stdin, e.g. `LLM_COMMAND="claude -p"` | whatever the CLI uses: a subscription works, no API key |
+| `anthropic` | Claude via the Anthropic API (optional `anthropic` package) | `ANTHROPIC_API_KEY` |
+
+I run my own crew through Claude Code on a Claude Max subscription, which is the
+`command` path. The OpenAI-compatible and command adapters are standard library;
+the tests and demos never call a real model.
 
 ## Related
 

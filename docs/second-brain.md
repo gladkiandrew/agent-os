@@ -77,8 +77,9 @@ as quoted `[EXTERNAL DATA …]` blocks, and a flagged message can never become a
 ## A run, end to end
 
 `claim task → build_context(agent, task, budget) [handoffs first, then cited hits,
-quarantined where external] → model.act (deterministic mock by default; an Anthropic
-adapter behind the same interface if ANTHROPIC_API_KEY is set) → write episode +
+quarantined where external] → model.act (deterministic mock by default; any model
+behind the same interface: an OpenAI-compatible endpoint, a CLI, or Anthropic, chosen
+by LLM_PROVIDER) → write episode +
 learning → write handoff → retro (worked / failed / next) → release`. Every step is a
 feed line.
 
